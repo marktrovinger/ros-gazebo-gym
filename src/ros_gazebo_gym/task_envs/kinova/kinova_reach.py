@@ -15,7 +15,7 @@ import numpy as np
 import rospy
 from gymnasium import spaces
 from gymnasium.envs.registration import register
-from template_my_robot_env import MyRobotEnv  # NOTE: Import your robot environment.
+from ros_gazebo_gym.robot_envs.kinova_env import KinovaEnv  # NOTE: Import your robot environment.
 
 # Register the task environment as a gymnasium environment.
 max_episode_steps = 1000
@@ -26,7 +26,7 @@ register(
 )
 
 
-class MyTaskEnv(MyRobotEnv):
+class KinovaReachEnv(KinovaEnv):
     """Environment used to define the task the robot has to learn (i.e. observations
     you want to use, rewards etc).
     """
